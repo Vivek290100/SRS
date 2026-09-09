@@ -5,13 +5,12 @@
  */
 
 export const GOOGLE_SHEET_ID = '1I_44WFB8XfmTjJGs3G7jd17EXbpkedMMhwlM3oXBVBU'
-export const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1I_44WFB8XfmTjJGs3G7jd17EXbpkedMMhwlM3oXBVBU/edit?usp=drive_link'
+export const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1I_44WFB8XfmTjJGs3G7jd17EXbpkedMMhwlM3oXBVBU/edit?usp=sharing'
 
 // Google Apps Script Web App Endpoint
-// You can set this in .env as VITE_GOOGLE_SCRIPT_URL, or paste your deployed URL here
 export const GOOGLE_SCRIPT_WEBAPP_URL =
   import.meta.env.VITE_GOOGLE_SCRIPT_URL ||
-  '' // Paste your Google Apps Script Web App URL here
+  'https://script.google.com/macros/s/AKfycbwFJv_FgkbG6eo2Me8tVhaAGLXDIxoK9E3boZalHft1tENw82k2zLUsnRZ6iz0HcqQQ/exec'
 
 /**
  * Submits the admission form data to Google Sheets via Google Apps Script Web App.
@@ -62,17 +61,20 @@ export async function submitAdmissionToSheet(formData) {
       })
 
       console.log('✅ Application successfully posted to Google Sheet:', GOOGLE_SHEET_ID)
-      return { success: true, message: 'Submitted to Google Sheet' }
+      return { success: true, message: 'Submitted directly to Google Sheet' }
     } catch (err) {
       console.error('Error sending to Google Apps Script:', err)
       // Even if network fails, we already have local backup
       return { success: true, message: 'Saved with local backup' }
     }
   } else {
-    // If Web App URL is not yet configured, log clearly
-    console.info(
-      'ℹ️ Admission form logged locally. To connect directly to Google Sheets, deploy the Google Apps Script Web App and set GOOGLE_SCRIPT_WEBAPP_URL in src/services/admissionsSheet.js'
+    console.warn(
+      '⚠️ Google Apps Script Web App URL is missing. Set GOOGLE_SCRIPT_WEBAPP_URL in src/services/admissionsSheet.js to send live data to Google Sheets.'
     )
-    return { success: true, message: 'Logged locally (Awaiting Apps Script Deployment)' }
+    return {
+      success: false,
+      notConfigured: true,
+      message: 'Google Apps Script Web App URL is not configured yet.',
+    }
   }
 }

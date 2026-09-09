@@ -54,6 +54,7 @@ export default function Admission() {
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [submissionResult, setSubmissionResult] = useState(null)
 
   // Scroll to form if navigated with #admission-form hash
   useEffect(() => {
@@ -93,9 +94,11 @@ export default function Admission() {
     }
     setLoading(true)
     try {
-      await submitAdmissionToSheet(form)
+      const res = await submitAdmissionToSheet(form)
+      setSubmissionResult(res)
     } catch (err) {
       console.error('Error submitting application:', err)
+      setSubmissionResult({ success: false, message: err.message })
     } finally {
       setLoading(false)
       setSubmitted(true)
@@ -215,9 +218,23 @@ export default function Admission() {
               <p className="text-gray-600 mb-2">
                 Thank you, <strong>{form.parentName}</strong>! Your admission application for <strong>{form.studentName}</strong> ({form.grade}) has been received.
               </p>
-              <p className="text-gray-500 text-sm mb-8">
-                ✅ Your application has been logged into the Official Admissions Register (Google Drive Spreadsheet). Our admissions team will review the details and contact you at <strong>{form.phone}</strong> within 24 business hours.
-              </p>
+              {submissionResult?.notConfigured ? (
+                <div className="p-4 bg-amber-50 border border-amber-300 rounded-xl mb-6 text-left text-xs text-amber-900">
+                  <p className="font-bold text-sm text-amber-800 mb-1 flex items-center gap-1.5">
+                    ⚠️ Google Sheet Live Webhook Not Connected Yet
+                  </p>
+                  <p className="mb-2">
+                    Your form submission was saved in your local browser backup, but <strong>was NOT sent to Google Sheets</strong> because the Google Apps Script Web App URL has not been pasted into <code className="bg-amber-100 px-1 py-0.5 rounded font-mono">src/services/admissionsSheet.js</code>.
+                  </p>
+                  <p>
+                    Please deploy the <strong>google-apps-script.js</strong> in your Google Sheet (Extensions → Apps Script → Deploy as Web App) and paste the URL.
+                  </p>
+                </div>
+              ) : (
+                <p className="text-gray-500 text-sm mb-8">
+                  ✅ Your application has been logged into the Official Admissions Register (Google Drive Spreadsheet). Our admissions team will review the details and contact you at <strong>{form.phone}</strong> within 24 business hours.
+                </p>
+              )}
               <div className="p-4 bg-green-50 border border-green-200 rounded-xl mb-8 text-left">
                 <p className="text-green-800 text-sm font-semibold mb-2">Application Summary:</p>
                 <div className="grid grid-cols-2 gap-2 text-xs text-green-700">
