@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e3a5f;
+  --color-primary-light: #2a5298;
+  --color-primary-dark: #0f2340;
+  --color-accent: #f59e0b;
+  --color-accent-light: #fcd34d;
+  --color-accent-dark: #d97706;
+  --color-sky-bg: #e8f4fd;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Poppins', Georgia, serif;
+
+  --shadow-card: 0 4px 20px rgba(30,58,95,0.1);
+  --shadow-card-hover: 0 8px 30px rgba(30,58,95,0.2);
+  --shadow-navbar: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #1f2937;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: #0196FD;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(1, 150, 253, 0.35);
+  }
+  .btn-primary:hover {
+    background-color: #0082de;
+    box-shadow: 0 6px 20px rgba(1, 150, 253, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: #0196FD;
+    border: 2px solid #0196FD;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-secondary:hover {
+    background-color: #0196FD;
+    color: white;
+  }
+
+  .btn-outline-white {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-outline-white:hover {
+    background-color: #0196FD;
+    border-color: #0196FD;
+    color: white;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-top: 0.75rem;
+    line-height: 1.7;
+  }
+
+  .card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--color-accent-dark);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .tag-pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgba(30, 58, 95, 0.1);
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #0f2340 0%, #1e3a5f 50%, #2a5298 100%);
+  }
+
+  .bg-sky-bg {
+    background-color: var(--color-sky-bg);
+  }
+
+  .hero-text-shadow {
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-navbar {
+    box-shadow: var(--shadow-navbar);
+  }
+}
+
+/* Marquee animation */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Text colors */
+.text-primary { color: var(--color-primary); }
+.text-primary-dark { color: var(--color-primary-dark); }
+.text-accent { color: var(--color-accent); }
+.text-accent-dark { color: var(--color-accent-dark); }
+
+/* Background colors */
+.bg-primary { background-color: var(--color-primary); }
+.bg-primary-light { background-color: var(--color-primary-light); }
+.bg-primary-dark { background-color: var(--color-primary-dark); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-accent-dark { background-color: var(--color-accent-dark); }
+.bg-accent-light { background-color: var(--color-accent-light); }
+
+/* Hover variants */
+.hover\:bg-primary:hover { background-color: var(--color-primary); }
+.hover\:bg-primary-light:hover { background-color: var(--color-primary-light); }
+.hover\:bg-accent:hover { background-color: var(--color-accent); }
+.hover\:bg-accent-dark:hover { background-color: var(--color-accent-dark); }
+.hover\:text-accent:hover { color: var(--color-accent); }
+.hover\:text-primary:hover { color: var(--color-primary); }
+.hover\:text-white:hover { color: white; }
+
+/* Border colors */
+.border-primary { border-color: var(--color-primary); }
+.border-accent { border-color: var(--color-accent); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2a5298; }
+
+/* ── School Logo Animations ── */
+@keyframes logo-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes logo-pulse-sun {
+  0%, 100% { r: 7px; }
+  50%       { r: 8.8px; }
+}
+@keyframes logo-glow-shield {
+  from { filter: drop-shadow(0 0 2px rgba(30,136,229,0.5)); }
+  to   { filter: drop-shadow(0 0 8px rgba(30,136,229,0.8)); }
+}
+@keyframes logo-fadein-sr {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes logo-rise-book {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Admission form highlight pulse */
+@keyframes highlight-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+  50%       { box-shadow: 0 0 0 6px rgba(245,158,11,0.2); }
+}
+#admission-form {
+  scroll-margin-top: 80px;
+}
+
