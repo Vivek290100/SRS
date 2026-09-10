@@ -44,8 +44,8 @@ const contactInfo = [
     color: 'bg-purple-100 text-purple-600',
     content: (
       <div className="space-y-1">
-        <a href="mailto:contact@samsidh.in" className="block text-gray-700 text-sm hover:text-primary transition-colors font-medium">
-          contact@samsidh.in
+        <a href="mailto:satishreddyschool@gmail.com" className="block text-gray-700 text-sm hover:text-primary transition-colors font-medium">
+          satishreddyschool@gmail.com
         </a>
         <p className="text-gray-500 text-xs">We respond within 24 hours</p>
       </div>
@@ -181,7 +181,7 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div>
+            {/* <div>
               <h2 className="section-title mb-6">Send Us a Message</h2>
 
               {submitted ? (
@@ -291,7 +291,7 @@ export default function Contact() {
                   </button>
                 </form>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -304,8 +304,8 @@ export default function Contact() {
             <a href="tel:+919964511122" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm">
               <Phone size={16} /> +91 99645 11122
             </a>
-            <a href="mailto:contact@samsidh.in" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm">
-              <Mail size={16} /> contact@samsidh.in
+            <a href="mailto:satishreddyschool@gmail.com" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm">
+              <Mail size={16} /> satishreddyschool@gmail.com
             </a>
             <a href="https://maps.google.com/?q=Vempalli,AP" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#0196FD] hover:bg-[#0082de] text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm shadow-md">
               <Navigation size={16} /> Get Directions

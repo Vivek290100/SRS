@@ -9,56 +9,7 @@ const whyWork = [
 ]
 
 const openings = [
-  {
-    title: 'Primary School Teacher (English)',
-    dept: 'Academics',
-    type: 'Full-Time',
-    location: 'Vempalli Campus',
-    experience: '2–5 years',
-    color: 'bg-blue-100 text-blue-700',
-    desc: 'We seek an enthusiastic English teacher with a passion for phonics-based learning and the Samsidh Reading Program (SRP). Must be comfortable integrating digital tools in teaching.',
-    skills: ['B.Ed. in English', 'Experience with CBSE curriculum', 'Phonics & literacy expertise', 'Digital-friendly mindset'],
-  },
-  {
-    title: 'Mathematics Teacher (Middle School)',
-    dept: 'Academics',
-    type: 'Full-Time',
-    location: 'Vempalli Campus',
-    experience: '3–6 years',
-    color: 'bg-purple-100 text-purple-700',
-    desc: 'Looking for a dynamic Math teacher who can make abstract concepts tangible and prepare students for Olympiads and board exams with enthusiasm.',
-    skills: ['B.Ed. / M.Sc. Mathematics', 'CBSE Class VI–VIII experience', 'Activity-based teaching', 'Olympiad coaching experience preferred'],
-  },
-  {
-    title: 'IT Administrator & Computer Lab Manager',
-    dept: 'Technology',
-    type: 'Full-Time',
-    location: 'Vempalli Campus',
-    experience: '2–4 years',
-    color: 'bg-green-100 text-green-700',
-    desc: 'Manage and maintain the school\'s computer lab, network infrastructure, Microsoft 365 environment, and Samsidh Connect digital platform.',
-    skills: ['Networking & IT support', 'Microsoft 365 admin experience', 'Hardware troubleshooting', 'School ERP / LMS familiarity'],
-  },
-  {
-    title: 'Digital Learning Support Specialist',
-    dept: 'EdTech',
-    type: 'Full-Time',
-    location: 'Vempalli Campus',
-    experience: '1–3 years',
-    color: 'bg-amber-100 text-amber-700',
-    desc: 'Support teachers and students in leveraging AI tools, Microsoft Copilot, and the LMS effectively. Train staff on digital pedagogy and manage content uploads.',
-    skills: ['EdTech or instructional design background', 'LMS administration', 'Microsoft Copilot familiarity', 'Training & facilitation skills'],
-  },
-  {
-    title: 'School Operations Manager',
-    dept: 'Administration',
-    type: 'Full-Time',
-    location: 'Vempalli Campus',
-    experience: '4–8 years',
-    color: 'bg-rose-100 text-rose-700',
-    desc: 'Oversee day-to-day school operations including admin, transport, hostel management, vendor coordination, and compliance. Must have prior school admin experience.',
-    skills: ['School administration background', 'Transport & hostel coordination', 'Vendor management', 'Strong communication & leadership'],
-  },
+ 
 ]
 
 const initialForm = { name: '', email: '', phone: '', role: '', experience: '', message: '', resume: null }
@@ -144,8 +95,8 @@ export default function Careers() {
       <section className="py-20 bg-sky-bg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="badge mb-3">Openings</span>
-            <h2 className="section-title">Current Job Openings</h2>
+            <span className="badge mb-3">Send Your Application To</span>
+            <h2 className="section-title"> +91 99645 11122</h2>
             <p className="section-subtitle">We are hiring across teaching, technology, and operations.</p>
           </div>
 
@@ -209,12 +160,12 @@ export default function Careers() {
       </section>
 
       {/* Application Form */}
-      <section id="apply-form" className="py-20 bg-white">
+      {/* <section id="apply-form" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="badge mb-3">Apply</span>
-            <h2 className="section-title">Send Your Application</h2>
-            <p className="section-subtitle">Fill in the form and attach your resume. We review every application carefully.</p>
+            <h2 className="section-title">Send Your Application to</h2>
+            <p className="section-subtitle"> +91 99645 11122</p>
           </div>
 
           {submitted ? (
@@ -308,7 +259,7 @@ export default function Careers() {
             </form>
           )}
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

@@ -495,7 +495,7 @@ export default function Admission() {
             <a href="tel:+919964511122" className="btn-primary text-sm">
               <Phone size={16} /> Call +91 99645 11122
             </a>
-            <a href="mailto:contact@samsidh.in" className="btn-secondary text-sm">
+            <a href="mailto:satishreddyschool@gmail.com" className="btn-secondary text-sm">
               <Mail size={16} /> Email Us
             </a>
           </div>
