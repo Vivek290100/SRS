@@ -33,37 +33,35 @@ export default function Navbar() {
   }
 
   const linkClass = ({ isActive }) =>
-    `text-sm font-medium transition-colors duration-200 hover:text-accent ${
-      isActive ? 'text-accent' : 'text-white/90'
+    `text-sm font-medium transition-colors duration-200 hover:text-accent ${isActive ? 'text-accent' : 'text-white/90'
     }`
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled ? 'bg-primary shadow-navbar backdrop-blur-md' : 'bg-primary'
-      }`}
+      className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'bg-primary shadow-navbar backdrop-blur-md' : 'bg-primary'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between min-h-20 md:min-h-24 py-2">
 
-          {/* ── Brand Lockup: Logo (Left) + Text (Right aligned with Shield) ── */}
-          <Link to="/" className="flex items-end gap-3.5 group py-1 h-16 sm:h-18 md:h-20" aria-label="Satish Reddy School Home">
+          {/* ── Brand Lockup: Logo (Left) + Text (Right) ── */}
+          <Link to="/" className="flex items-center gap-3.5 group py-1" aria-label="Satish Reddy School Home">
             <img
               src="/logo-crest.png"
               alt="Satish Reddy School Crest"
-              className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] flex-shrink-0"
+              className="h-14 sm:h-16 md:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] flex-shrink-0"
             />
-            <div className="h-[72.5%] flex flex-col justify-between items-center text-center select-none">
-              <span className="text-[#0196FD] font-black text-sm sm:text-base md:text-[16.5px] font-heading leading-none tracking-wider uppercase drop-shadow-sm text-center">
+            <div className="flex flex-col justify-center select-none">
+              <span className="text-white font-black text-sm sm:text-base md:text-[1px] font-heading leading-tight tracking-wider uppercase drop-shadow-sm">
                 SATISH REDDY
               </span>
-              <span className="text-accent text-[10px] sm:text-[11px] md:text-xs font-bold tracking-[0.22em] uppercase leading-none text-center">
+              <span className="text-accent text-[11px] sm:text-xs font-bold tracking-[0.22em] uppercase leading-tight">
                 — SCHOOL —
               </span>
-              <span className="text-white/85 text-[9px] sm:text-[10px] md:text-[11px] font-semibold tracking-[0.28em] uppercase leading-none text-center">
-                — VEMPALLI —
+              <span className="text-white/85 text-[10px] sm:text-[11px] font-semibold tracking-[0.28em] uppercase leading-tight">
+                VEMPALLI
               </span>
-              <span className="text-white/55 text-[8px] sm:text-[9px] tracking-widest font-medium uppercase leading-none text-center">
+              <span className="text-white/55 text-[8px] sm:text-[9px] tracking-widest font-medium uppercase mt-0.5">
                 LEARN · LEAD · SUCCEED
               </span>
             </div>
@@ -84,7 +82,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={handleAdmissionClick}
-              className="hidden sm:flex items-center gap-1.5 bg-[#0196FD] hover:bg-[#0082de] text-white text-sm font-bold px-4 py-2 rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 shadow-md shadow-[#0196FD]/25"
+              className="hidden sm:flex items-center gap-1.5 bg-accent hover:bg-accent-dark text-white text-sm font-bold px-4 py-2 rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
             >
               Admissions Open
             </button>
@@ -110,10 +108,9 @@ export default function Navbar() {
                 end={link.to === '/'}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    isActive
-                      ? 'bg-accent/20 text-accent'
-                      : 'text-white/80 hover:bg-white/10 hover:text-white'
+                  `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive
+                    ? 'bg-accent/20 text-accent'
+                    : 'text-white/80 hover:bg-white/10 hover:text-white'
                   }`
                 }
               >

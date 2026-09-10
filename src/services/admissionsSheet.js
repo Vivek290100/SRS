@@ -7,10 +7,12 @@
 export const GOOGLE_SHEET_ID = '1I_44WFB8XfmTjJGs3G7jd17EXbpkedMMhwlM3oXBVBU'
 export const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1I_44WFB8XfmTjJGs3G7jd17EXbpkedMMhwlM3oXBVBU/edit?usp=sharing'
 
+
 // Google Apps Script Web App Endpoint
 export const GOOGLE_SCRIPT_WEBAPP_URL =
   import.meta.env.VITE_GOOGLE_SCRIPT_URL ||
-  'https://script.google.com/macros/s/AKfycbwFJv_FgkbG6eo2Me8tVhaAGLXDIxoK9E3boZalHft1tENw82k2zLUsnRZ6iz0HcqQQ/exec'
+  // 'https://script.google.com/macros/s/AKfycbwFJv_FgkbG6eo2Me8tVhaAGLXDIxoK9E3boZalHft1tENw82k2zLUsnRZ6iz0HcqQQ/exec'
+  'https://script.google.com/macros/s/AKfycbyvlPBpE6I_5_5HF96dgQfDTWE5Kp6xjtT0ylNHtKIbn8nT7cPVXkLK4ZOd9WNLiXmn/exec'
 
 /**
  * Submits the admission form data to Google Sheets via Google Apps Script Web App.

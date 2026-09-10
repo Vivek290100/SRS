@@ -25,23 +25,23 @@ function getDriveEmbedUrl(url) {
   return url
 }
 
-const categories = ['All', 'Campus', 'Labs', 'Library', 'Sports', 'Events']
+const categories = ['All', 'Campus', 'Labs', 'Library', 'Sports', 'Events',]
 
 const galleryItems = [
   // Campus
   { id: 1, cat: 'Campus', img: 'https://drive.google.com/file/d/1EaJMK15GMBoROn30WM_R8KebOwI1QEe7/view?usp=drive_link', label: 'School Main Building' },
   { id: 2, cat: 'Campus', type: 'video', img: 'https://drive.google.com/file/d/1X0WA0MOkyAHDp3mKdrhkQhb4-3eGDqop/view?usp=sharing', label: 'Campus Entrance' },
-  { id: 3, cat: 'Campus', img: 'https://drive.google.com/file/d/1jabb0dwOzCJA6RawZ7_KKn_0L1sZ4I88/view?usp=drive_link', label: 'Classroom Block' },
-  { id: 4, cat: 'Campus', img: 'https://drive.google.com/file/d/1gIMcJuxPCOyimgqfOqk9pYtw-cfyoooc/view?usp=drive_link', label: 'School Corridor' },
+  { id: 3, cat: 'Campus', img: 'https://drive.google.com/file/d/1gIMcJuxPCOyimgqfOqk9pYtw-cfyoooc/view?usp=drive_link', label: 'Classroom Block' },
+  { id: 4, cat: 'Campus', img: 'https://drive.google.com/file/d/1bymO74_D6_k33ijdEJZS5xlx-meYiU8U/view?usp=sharing', label: 'School Corridor' },
   // Labs
-  { id: 5, cat: 'Labs', img: 'https://drive.google.com/file/d/1aoUC9DiIB3zpvf-5jkXP82YG3cfsDYD1/view?usp=drive_link', label: 'Science Laboratory' },
-  { id: 6, cat: 'Labs', img: 'https://drive.google.com/file/d/10nvjWE9bcZZBziBim7ItruNg6-CvqaX3/view?usp=drive_link', label: 'Chemistry Lab' },
-  { id: 7, cat: 'Labs', img: 'https://drive.google.com/file/d/1W0HcaRrTCcZkf-sGXwOLehx9bRFLAo9k/view?usp=drive_link', label: 'Computer Lab' },
-  { id: 8, cat: 'Labs', img: 'https://drive.google.com/file/d/1EiBVhkThHrYNh7c9k6UWsBKzIurbdB8c/view?usp=drive_link', label: 'Smart Classroom' },
+  { id: 5, cat: 'Labs', img: 'https://images.unsplash.com/photo-1532094349884-543559872a21?w=600&q=80', label: 'Science Laboratory' },
+  { id: 6, cat: 'Labs', img: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=600&q=80', label: 'Chemistry Lab' },
+  { id: 7, cat: 'Labs', img: 'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?w=600&q=80', label: 'Computer Lab' },
+  { id: 8, cat: 'Labs', img: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80', label: 'Smart Classroom' },
   // Library
-  { id: 9, cat: 'Library', img: 'https://drive.google.com/file/d/17YGTDJE0uvSwKA80ky32ALxluIrJwzDb/view?usp=drive_link', label: 'School Library' },
-  { id: 10, cat: 'Library', img: 'https://drive.google.com/file/d/1mpZZNE1KKCrQ3tL96KahTBe_EZd5Uofx/view?usp=drive_link', label: 'Reading Hall' },
-  { id: 11, cat: 'Library', img: 'https://drive.google.com/file/d/1cSNAvSgZ-xrwGW8CvtSOKYrIOB3mfz1z/view?usp=drive_link', label: 'Student Reading Time' },
+  { id: 9, cat: 'Library', img: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80', label: 'School Library' },
+  { id: 10, cat: 'Library', img: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80', label: 'Reading Hall' },
+  { id: 11, cat: 'Library', img: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80', label: 'Student Reading Time' },
   { id: 12, cat: 'Library', img: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&q=80', label: 'Library Collection' },
   // Sports
   { id: 13, cat: 'Sports', img: 'https://images.unsplash.com/photo-1562088287-bde35a1ea917?w=600&q=80', label: 'Sports Ground' },
@@ -53,7 +53,6 @@ const galleryItems = [
   { id: 18, cat: 'Events', img: 'https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&q=80', label: 'Science Exhibition' },
   { id: 19, cat: 'Events', img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80', label: 'Cultural Programme' },
   { id: 20, cat: 'Events', img: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&q=80', label: 'Award Ceremony' },
- 
 ]
 
 export default function Gallery() {
@@ -88,11 +87,10 @@ export default function Gallery() {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                  active === cat
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${active === cat
                     ? 'bg-[#0196FD] text-white shadow-md shadow-[#0196FD]/30 scale-105'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {cat}
                 <span className={`ml-1.5 text-xs ${active === cat ? 'text-accent' : 'text-gray-400'}`}>
@@ -131,8 +129,8 @@ export default function Gallery() {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {item.type === 'video'
                     ? <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/60">
-                        <Play size={28} className="text-white fill-white ml-1" />
-                      </div>
+                      <Play size={28} className="text-white fill-white ml-1" />
+                    </div>
                     : <Search size={28} className="text-white" />
                   }
                 </div>

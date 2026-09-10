@@ -9,7 +9,17 @@ const whyWork = [
 ]
 
 const openings = [
- 
+  {
+    title: 'Primary School Teacher (English)',
+    dept: 'Academics',
+    type: 'Full-Time',
+    location: 'Vempalli Campus',
+    experience: '2–5 years',
+    color: 'bg-blue-100 text-blue-700',
+    desc: 'We seek an enthusiastic English teacher with a passion for phonics-based learning and the Samsidh Reading Program (SRP). Must be comfortable integrating digital tools in teaching.',
+    skills: ['B.Ed. in English', 'Experience with CBSE curriculum', 'Phonics & literacy expertise', 'Digital-friendly mindset'],
+  },
+
 ]
 
 const initialForm = { name: '', email: '', phone: '', role: '', experience: '', message: '', resume: null }
@@ -95,8 +105,8 @@ export default function Careers() {
       <section className="py-20 bg-sky-bg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="badge mb-3">Send Your Application To</span>
-            <h2 className="section-title"> +91 99645 11122</h2>
+            <span className="badge mb-3">Openings</span>
+            <h2 className="section-title">Current Job Openings</h2>
             <p className="section-subtitle">We are hiring across teaching, technology, and operations.</p>
           </div>
 
@@ -160,12 +170,12 @@ export default function Careers() {
       </section>
 
       {/* Application Form */}
-      {/* <section id="apply-form" className="py-20 bg-white">
+      <section id="apply-form" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="badge mb-3">Apply</span>
-            <h2 className="section-title">Send Your Application to</h2>
-            <p className="section-subtitle"> +91 99645 11122</p>
+            <h2 className="section-title">Send Your Application</h2>
+            <p className="section-subtitle">Fill in the form and attach your resume. We review every application carefully.</p>
           </div>
 
           {submitted ? (
@@ -259,7 +269,7 @@ export default function Careers() {
             </form>
           )}
         </div>
-      </section> */}
+      </section>
     </div>
   )
 }
