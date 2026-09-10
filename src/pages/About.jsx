@@ -97,7 +97,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=80"
+                src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl3_m-UVqrJVqKLoq8cXp5e179HkReyFVf4u622b6FKt7Ls3do2fQQxa7pzzuf1-gf8sBCUhN8F5V6z3qzhqKneFpFja3JJwXH1JrLs3eFkmiga_O9zDuo6zjdHDQrGkps83l0NcXhE-5CE=s680-w680-h510-rw"
                 alt="School campus"
                 className="rounded-2xl shadow-card-hover w-full object-cover h-96"
               />

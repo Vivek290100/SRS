@@ -207,7 +207,7 @@ export default function Home() {
 
                 <div className="relative w-72 sm:w-80 rounded-3xl overflow-hidden shadow-2xl">
                   <img
-                    src="/satish-reddy-sir.jpg"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGr9qXMA97Ds_3F5MKXxJp4UYb1XMRupdFcmIWkRXHzX6ZI0OBtIzYiEdN&s=10"
                     alt="Sri Satish Reddy Garu — Founder & Correspondent"
                     className="w-full h-auto object-cover"
                     style={{ aspectRatio: '3/4' }}

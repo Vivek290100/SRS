@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { Megaphone, ChevronRight } from 'lucide-react'
 
 const announcements = [
-  '🎉 Admissions Open for Nursery to Class IX for the Academic Year 2025–26!',
+  '🎉 Admissions Open for Nursery to Class IX for the Academic Year 2026–27!',
   '📚 Experience AI-Enabled Smart Classrooms & Microsoft Copilot Integration',
   '🏆 CBSE Curriculum aligned with NEP 2020 — Nurturing Future Leaders',
   '🚌 Safe GPS-Tracked Transport | CCTV Secured Campus | Hostel Available',
